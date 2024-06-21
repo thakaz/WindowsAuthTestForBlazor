@@ -1,7 +1,22 @@
 ﻿@page "/"
 
+
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<AuthorizeView>
+        <p>ログインユーザ: @context.User.Identity.Name!</p>
+</AuthorizeView>
+
+<AuthorizeView Roles="User">
+    <p>Role:User</p>
+</AuthorizeView>
+
+<AuthorizeView Roles="Admin">
+    <p>Role:Admin </p>
+</AuthorizeView>
+
+@code{
+
+}
